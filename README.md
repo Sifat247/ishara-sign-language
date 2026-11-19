@@ -11,7 +11,7 @@ Built with native Flutter, it features offline-cached typography, structured ges
 - **7-Language Localization:** Instant switching between Bengali, English, Arabic (RTL), Hindi, Urdu (RTL), Spanish, and French.
 - **100% Offline-First:** Bundled offline fonts and local SQLite/SharedPreferences storage with zero cloud dependence.
 - **Interactive Mirror Mode:** Check hand positioning using on-device front camera alignment without uploading any video feed.
-- **Fast Searchable Dictionary:** Filter signs by daily essentials, emergency healthcare, numbers, and alphabets with local bookmarking.
+- **Fast Searchable Dictionary:** Filter signs by daily essentials, emergency healthcare, numbers, and a few ASL letters with local bookmarking.
 
 ---
 

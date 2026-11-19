@@ -1,7 +1,7 @@
-Ishara is a free, offline beginner's guide to Bangla Sign Language (BdSL) and American Sign Language (ASL). Use it to learn greetings, everyday phrases, emergency and health words, family terms, numbers and the first letters of the alphabet, with short text hints, quizzes and a searchable guide.
+Ishara is a free, offline beginner's guide to Bangla Sign Language (BdSL) and American Sign Language (ASL). Use it to learn greetings, everyday phrases, emergency and health words, family terms and numbers, with short text hints, quizzes and a searchable guide.
 
 WHAT YOU GET
-• 33 beginner signs in 5 topics: Greetings & daily needs, Emergency & healthcare, Alphabet, Family and Numbers
+• 28 beginner signs in 4 topics (plus 3 ASL letters): Greetings & daily needs, Emergency & healthcare, Family and Numbers
 • Pick a track: BdSL, ASL or both
 • Interactive quiz drills with instant feedback, XP and progress saved on your device
 • Searchable sign guide with Bangla and English words, plus a bookmarks list

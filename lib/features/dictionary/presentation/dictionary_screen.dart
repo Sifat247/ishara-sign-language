@@ -81,7 +81,7 @@ class _DictionaryScreenState extends State<DictionaryScreen> {
                 _buildFilterChip('সংরক্ষিত ❤️', 'bookmarked'),
                 _buildFilterChip('নৈমিত্তিক', 'daily'),
                 _buildFilterChip('জরুরি ও স্বাস্থ্য', 'emergency'),
-                _buildFilterChip('বর্ণমালা (BdSL)', 'alphabet'),
+                _buildFilterChip('ASL বর্ণমালা', 'alphabet'),
               ],
             ),
           ),
