@@ -1,4 +1,4 @@
-package com.mobireactor.ishara.ishara_sign
+package com.yourpremiumapp.ishara
 
 import io.flutter.embedding.android.FlutterActivity
 

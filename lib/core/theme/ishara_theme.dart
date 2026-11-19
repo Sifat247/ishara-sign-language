@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class IsharaColors {
   // Heritage Royal & Accessible Contrast Tokens (WCAG AAA)
@@ -13,7 +12,7 @@ class IsharaColors {
   static const Color accentAmber = Color(0xFFF4A261); // Alias for compatibility
   static const Color goldLight = Color(0xFFFFEAD1);
   static const Color amberLight = Color(0xFFFFEAD1); // Alias for compatibility
-  static const Color terracotta = Color(0xFFE05A47); // Heritage Terracotta (Mistake/Alert)
+  static const Color terracotta = Color(0xFFE05A47); // Heritage Terracotta
   static const Color terracottaSoft = Color(0xFFFDEEEB);
 
   // Studio & Canvases
@@ -35,11 +34,12 @@ class IsharaColors {
 }
 
 class IsharaTheme {
+  static const String fontBengali = 'HindSiliguri';
+
   static ThemeData get lightTheme {
-    final baseTextTheme = ThemeData.light().textTheme;
-    
     return ThemeData(
       useMaterial3: true,
+      fontFamily: fontBengali,
       colorScheme: ColorScheme.fromSeed(
         seedColor: IsharaColors.primaryTeal,
         primary: IsharaColors.primaryTeal,
@@ -48,26 +48,30 @@ class IsharaTheme {
         brightness: Brightness.light,
       ),
       scaffoldBackgroundColor: IsharaColors.paperCanvas,
-      textTheme: GoogleFonts.hindSiliguriTextTheme(baseTextTheme).copyWith(
-        displayLarge: GoogleFonts.plusJakartaSans(
+      textTheme: const TextTheme(
+        displayLarge: TextStyle(
+          fontFamily: fontBengali,
           fontSize: 28,
           fontWeight: FontWeight.w700,
           color: IsharaColors.textDark,
           letterSpacing: -0.5,
         ),
-        titleLarge: GoogleFonts.hindSiliguri(
+        titleLarge: TextStyle(
+          fontFamily: fontBengali,
           fontSize: 18,
           fontWeight: FontWeight.w700,
           color: IsharaColors.textDark,
           height: 1.5,
         ),
-        bodyLarge: GoogleFonts.hindSiliguri(
+        bodyLarge: TextStyle(
+          fontFamily: fontBengali,
           fontSize: 15,
           fontWeight: FontWeight.w400,
           color: IsharaColors.textDark,
           height: 1.6,
         ),
-        bodyMedium: GoogleFonts.hindSiliguri(
+        bodyMedium: TextStyle(
+          fontFamily: fontBengali,
           fontSize: 13,
           color: IsharaColors.textMuted,
           height: 1.5,
@@ -88,6 +92,7 @@ class IsharaTheme {
         centerTitle: true,
         scrolledUnderElevation: 0,
         titleTextStyle: TextStyle(
+          fontFamily: fontBengali,
           color: IsharaColors.textDark,
           fontSize: 18,
           fontWeight: FontWeight.w700,
@@ -103,7 +108,8 @@ class IsharaTheme {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(16),
           ),
-          textStyle: GoogleFonts.hindSiliguri(
+          textStyle: const TextStyle(
+            fontFamily: fontBengali,
             fontSize: 16,
             fontWeight: FontWeight.w600,
             letterSpacing: 0.2,

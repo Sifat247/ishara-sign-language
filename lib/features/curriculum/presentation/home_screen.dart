@@ -19,7 +19,6 @@ class _HomeScreenState extends State<HomeScreen> {
   int _xpPoints = 140;
   String _activeTrack = 'bdsl';
   List<String> _completedLessonIds = [];
-  bool _isPro = false;
 
   @override
   void initState() {
@@ -43,7 +42,6 @@ class _HomeScreenState extends State<HomeScreen> {
     final streak = await ProgressTracker.getStreak();
     final track = await ProgressTracker.getTrack();
     final completed = await LocalVaultService.getCompletedLessonIds();
-    final pro = await ProgressTracker.isProUnlocked();
 
     if (mounted) {
       setState(() {
@@ -51,7 +49,6 @@ class _HomeScreenState extends State<HomeScreen> {
         _streakDays = streak;
         _activeTrack = track;
         _completedLessonIds = completed;
-        _isPro = pro;
       });
     }
   }
@@ -69,17 +66,6 @@ class _HomeScreenState extends State<HomeScreen> {
               '${localeNotifier.tr('app_title')} ',
               style: const TextStyle(fontWeight: FontWeight.bold, color: IsharaColors.primaryTeal),
             ),
-            if (_isPro) ...[
-              const SizedBox(width: 6),
-              Container(
-                padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
-                decoration: BoxDecoration(
-                  color: IsharaColors.goldLight,
-                  borderRadius: BorderRadius.circular(6),
-                ),
-                child: const Text('PRO', style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold, color: IsharaColors.primaryTeal)),
-              ),
-            ],
           ],
         ),
         actions: [
@@ -375,7 +361,7 @@ class _HomeScreenState extends State<HomeScreen> {
               MaterialPageRoute(builder: (_) => const DictionaryScreen()),
             );
           } else if (idx == 2) {
-            _showProModal(context);
+            _showAboutModal(context);
           }
         },
         items: [
@@ -387,16 +373,16 @@ class _HomeScreenState extends State<HomeScreen> {
             icon: const Icon(Icons.menu_book_rounded),
             label: localeNotifier.tr('dictionary_tab'),
           ),
-          BottomNavigationBarItem(
-            icon: const Icon(Icons.workspace_premium_rounded),
-            label: localeNotifier.tr('premium_tab'),
+          const BottomNavigationBarItem(
+            icon: Icon(Icons.info_outline_rounded),
+            label: 'পরিচিতি',
           ),
         ],
       ),
     );
   }
 
-  void _showProModal(BuildContext context) {
+  void _showAboutModal(BuildContext context) {
     showModalBottomSheet(
       context: context,
       isScrollControlled: true,
@@ -419,55 +405,42 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             const SizedBox(height: 20),
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Icon(Icons.workspace_premium_rounded, color: IsharaColors.royalGold, size: 32),
-                const SizedBox(width: 8),
+                Icon(Icons.volunteer_activism_rounded, color: IsharaColors.primaryTeal, size: 30),
+                SizedBox(width: 8),
                 Text(
-                  localeNotifier.tr('pro_title'),
-                  style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20, color: IsharaColors.primaryTeal),
+                  'ইশারা (Ishara) প্রকল্প',
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18, color: IsharaColors.primaryTeal),
                 ),
               ],
             ),
             const SizedBox(height: 12),
-            Text(
-              localeNotifier.tr('pro_desc'),
+            const Text(
+              'ইশারা একটি উন্মুক্ত ও ১০০% ফ্রি প্রবেশগম্যতা উদ্যোগ। কোনো লুকানো চার্জ বা বাণিজ্যিক পেওয়াল নেই। শ্রবণ ও বাক প্রতিবন্ধী জনগোষ্ঠীর সাথে প্রাথমিক ভাববিনিময়ের সহজ পথ তৈরি করাই এর লক্ষ্য।',
               textAlign: TextAlign.center,
-              style: const TextStyle(color: IsharaColors.textMuted, fontSize: 14),
+              style: TextStyle(color: IsharaColors.textDark, fontSize: 13, height: 1.5),
+            ),
+            const SizedBox(height: 16),
+            const Divider(),
+            const SizedBox(height: 8),
+            const Text(
+              'অফিসিয়াল তথ্য ও যোগাযোগ:',
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13),
+            ),
+            const SizedBox(height: 6),
+            const Text(
+              '• গিটহাব: github.com/Sifat247/ishara-sign-language\n• গোপনীয়তা নীতিমালা: ishara-sign-language.vercel.app/privacy\n• সংস্করণ: 1.0.0 (ওপেন এডুকেশন)',
+              style: TextStyle(fontSize: 12, color: IsharaColors.textMuted, height: 1.5),
             ),
             const SizedBox(height: 20),
-            _buildProPerk('সম্পূর্ণ অফলাইন ব্যাচ ভিডিও ডাউনলোড'),
-            _buildProPerk('আনলিমিটেড ক্যামেরা মিরর মোড ও পোস্টার চেকিং'),
-            _buildProPerk('১০০% আজীবন বিজ্ঞাপনমুক্ত অভিজ্ঞতা'),
-            const SizedBox(height: 24),
             ElevatedButton(
-              onPressed: () async {
-                await ProgressTracker.unlockPro();
-                if (!context.mounted) return;
-                Navigator.pop(ctx);
-                _loadState();
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('🎉 অভিনন্দন! Ishara Pro সফলভাবে সক্রিয় হয়েছে।')),
-                );
-              },
-              child: Text(localeNotifier.tr('pro_unlock_btn')),
+              onPressed: () => Navigator.pop(ctx),
+              child: const Text('বন্ধ করুন'),
             ),
           ],
         ),
-      ),
-    );
-  }
-
-  Widget _buildProPerk(String text) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 4.0),
-      child: Row(
-        children: [
-          const Icon(Icons.check_circle_rounded, color: IsharaColors.success, size: 20),
-          const SizedBox(width: 10),
-          Expanded(child: Text(text, style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w500))),
-        ],
       ),
     );
   }

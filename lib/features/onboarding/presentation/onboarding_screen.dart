@@ -63,57 +63,57 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         ],
       ),
       body: SafeArea(
-        child: Padding(
+        child: SingleChildScrollView(
           padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 16),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              const Spacer(),
+              const SizedBox(height: 12),
               Center(
                 child: Container(
-                  width: 110,
-                  height: 110,
+                  width: 96,
+                  height: 96,
                   decoration: BoxDecoration(
                     color: IsharaColors.primaryTeal,
-                    borderRadius: BorderRadius.circular(30),
+                    borderRadius: BorderRadius.circular(26),
                     boxShadow: [
                       BoxShadow(
                         color: IsharaColors.primaryTeal.withValues(alpha: 0.3),
-                        blurRadius: 20,
-                        offset: const Offset(0, 8),
+                        blurRadius: 18,
+                        offset: const Offset(0, 6),
                       ),
                     ],
                   ),
                   child: const Center(
-                    child: Text('🤟', style: TextStyle(fontSize: 54)),
+                    child: Text('🤟', style: TextStyle(fontSize: 48)),
                   ),
                 ),
               ),
-              const SizedBox(height: 28),
+              const SizedBox(height: 20),
               Text(
                 localeNotifier.tr('app_title'),
                 textAlign: TextAlign.center,
                 style: const TextStyle(
-                  fontSize: 32,
+                  fontSize: 28,
                   fontWeight: FontWeight.bold,
                   color: IsharaColors.primaryTeal,
                   letterSpacing: -0.5,
                 ),
               ),
-              const SizedBox(height: 8),
+              const SizedBox(height: 6),
               Text(
                 localeNotifier.tr('app_subtitle'),
                 textAlign: TextAlign.center,
                 style: const TextStyle(
-                  fontSize: 15,
+                  fontSize: 14,
                   color: IsharaColors.textMuted,
-                  height: 1.5,
+                  height: 1.4,
                 ),
               ),
-              const Spacer(),
+              const SizedBox(height: 24),
               Container(
-                padding: const EdgeInsets.all(16),
+                padding: const EdgeInsets.all(14),
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(16),
@@ -121,15 +121,38 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 ),
                 child: const Column(
                   children: [
-                    _BenefitRow(icon: Icons.offline_bolt_rounded, text: 'সম্পূর্ণ অফলাইন প্র্যাকটিস — শূন্য ইন্টারনেট খরচে'),
-                    SizedBox(height: 12),
-                    _BenefitRow(icon: Icons.camera_front_rounded, text: 'ক্যামেরা মিরর মোডে হাতের ভঙ্গি নির্ভুল যাচাই'),
-                    SizedBox(height: 12),
-                    _BenefitRow(icon: Icons.verified_user_rounded, text: 'প্রমিত BNDF ও সমাজসেবা অধিদপ্তর স্বীকৃত সাইন'),
+                    _BenefitRow(icon: Icons.offline_bolt_rounded, text: '১০০% অফলাইন প্র্যাকটিস — শূন্য ইন্টারনেট খরচে'),
+                    SizedBox(height: 10),
+                    _BenefitRow(icon: Icons.camera_front_rounded, text: 'আয়না মোডে হাতের ভঙ্গি ও দিক সরাসরি যাচাই'),
+                    SizedBox(height: 10),
+                    _BenefitRow(icon: Icons.school_rounded, text: 'শিক্ষানবিশ সহায়িকা — প্রাথমিক বাংলা ও ইংরেজি সাইন ড্রিল'),
                   ],
                 ),
               ),
-              const SizedBox(height: 28),
+              const SizedBox(height: 12),
+              // Honest Community Disclaimer Box
+              Container(
+                padding: const EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                  color: const Color(0xFFF8FAFC),
+                  borderRadius: BorderRadius.circular(12),
+                  border: Border.all(color: const Color(0xFFE2E8F0)),
+                ),
+                child: const Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Icon(Icons.info_outline_rounded, color: IsharaColors.primaryTeal, size: 20),
+                    SizedBox(width: 8),
+                    Expanded(
+                      child: Text(
+                        'পরামর্শ: এটি প্রাথমিক ভাষা সচেতনতা ও শিক্ষানবিশ অ্যাপ। পূর্ণাঙ্গ ও পেশাদার ইশারা ভাষা শেখার জন্য অনুমোদিত বধির শিক্ষক বা ইনস্টিটিউটের সাথে অনুশীলন করুন।',
+                        style: TextStyle(fontSize: 11, color: IsharaColors.textMuted, height: 1.4),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 24),
               ElevatedButton(
                 onPressed: () {
                   Navigator.pushReplacement(
