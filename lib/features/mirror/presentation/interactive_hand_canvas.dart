@@ -27,18 +27,6 @@ class InteractiveHandCanvas extends StatelessWidget {
                 handEmoji,
                 style: const TextStyle(fontSize: 84),
               ),
-              const SizedBox(height: 8),
-              Container(
-                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-                decoration: BoxDecoration(
-                  color: Colors.black.withValues(alpha: 0.4),
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                child: const Text(
-                  'সংকেত ল্যান্ডমার্ক প্রস্তুত',
-                  style: TextStyle(color: Colors.white70, fontSize: 11),
-                ),
-              ),
             ],
           ),
         ),

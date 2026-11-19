@@ -211,7 +211,7 @@ class _InteractiveLessonScreenState extends State<InteractiveLessonScreen> {
           IconButton(
             tooltip: localeNotifier.tr('mirror_mode'),
             icon: Icon(
-              _isMirrorMode ? Icons.camera_front_rounded : Icons.camera_front_outlined,
+              _isMirrorMode ? Icons.flip_rounded : Icons.flip_outlined,
               color: _isMirrorMode ? IsharaColors.royalGold : IsharaColors.textDark,
             ),
             onPressed: () {

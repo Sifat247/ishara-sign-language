@@ -5,7 +5,7 @@ import 'package:ishara_sign/core/services/sign_database.dart';
 import 'package:ishara_sign/core/theme/ishara_theme.dart';
 import '../../quiz/presentation/interactive_lesson_screen.dart';
 import '../../dictionary/presentation/dictionary_screen.dart';
-import 'speed_trainer_screen.dart';
+import 'progress_tracker.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -15,7 +15,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  int _streakDays = 5;
+  int _streakDays = 0;
   int _xpPoints = 140;
   String _activeTrack = 'bdsl';
   List<String> _completedLessonIds = [];
@@ -188,53 +188,6 @@ class _HomeScreenState extends State<HomeScreen> {
                       ],
                     ),
                   ],
-                ),
-              ),
-            ),
-          ),
-
-          // Speed Trainer Fast-Access Banner (Thumb ergonomics)
-          SliverToBoxAdapter(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0),
-              child: InkWell(
-                onTap: () async {
-                  await Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (_) => const SpeedFingerspellingTrainer()),
-                  );
-                  _loadState();
-                },
-                borderRadius: BorderRadius.circular(16),
-                child: Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-                  decoration: BoxDecoration(
-                    color: IsharaColors.goldLight.withValues(alpha: 0.5),
-                    borderRadius: BorderRadius.circular(16),
-                    border: Border.all(color: IsharaColors.royalGold),
-                  ),
-                  child: Row(
-                    children: [
-                      const Icon(Icons.bolt_rounded, color: IsharaColors.primaryTeal, size: 28),
-                      const SizedBox(width: 12),
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              localeNotifier.tr('speed_drill_title'),
-                              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 14, color: IsharaColors.primaryTeal),
-                            ),
-                            Text(
-                              localeNotifier.tr('speed_drill_sub'),
-                              style: const TextStyle(fontSize: 12, color: IsharaColors.textDark),
-                            ),
-                          ],
-                        ),
-                      ),
-                      const Icon(Icons.arrow_forward_ios_rounded, size: 14, color: IsharaColors.primaryTeal),
-                    ],
-                  ),
                 ),
               ),
             ),

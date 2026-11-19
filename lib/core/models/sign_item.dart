@@ -7,7 +7,6 @@ class SignItem {
   final String gestureHintBn;
   final String handEmoji;
   final String track; // 'bdsl', 'asl', or 'both'
-  final bool isPro;
 
   const SignItem({
     required this.id,
@@ -18,7 +17,6 @@ class SignItem {
     required this.gestureHintBn,
     required this.handEmoji,
     this.track = 'bdsl',
-    this.isPro = false,
   });
 
   Map<String, dynamic> toMap() => {
@@ -30,7 +28,6 @@ class SignItem {
     'gestureHintBn': gestureHintBn,
     'handEmoji': handEmoji,
     'track': track,
-    'isPro': isPro,
   };
 
   factory SignItem.fromMap(Map<String, dynamic> map) => SignItem(
@@ -42,7 +39,6 @@ class SignItem {
     gestureHintBn: map['gestureHintBn'] as String,
     handEmoji: map['handEmoji'] as String,
     track: map['track'] as String? ?? 'bdsl',
-    isPro: map['isPro'] as bool? ?? false,
   );
 }
 

@@ -123,7 +123,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   children: [
                     _BenefitRow(icon: Icons.offline_bolt_rounded, text: '১০০% অফলাইন প্র্যাকটিস — শূন্য ইন্টারনেট খরচে'),
                     SizedBox(height: 10),
-                    _BenefitRow(icon: Icons.camera_front_rounded, text: 'আয়না মোডে হাতের ভঙ্গি ও দিক সরাসরি যাচাই'),
+                    _BenefitRow(icon: Icons.camera_front_rounded, text: 'বাঁ-হাতি ও ডান-হাতি দৃশ্য বদলে দেখার সুবিধা'),
                     SizedBox(height: 10),
                     _BenefitRow(icon: Icons.school_rounded, text: 'শিক্ষানবিশ সহায়িকা — প্রাথমিক বাংলা ও ইংরেজি সাইন ড্রিল'),
                   ],

@@ -1,11 +1,11 @@
 {
-    "name": "ishara_sign",
-    "short_name": "ishara_sign",
+    "name": "Ishara",
+    "short_name": "Ishara",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "Offline Bangla (BdSL) and ASL sign language beginner guide.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
