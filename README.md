@@ -1,17 +1,16 @@
-# Ishara (ইশারা) — Inclusive Sign Language App (BdSL & ASL)
+# Ishara (ইশারা) — Bangla Sign Language (BdSL) Beginner Guide
 
-**Ishara (ইশারা)** is a lightweight, offline-first educational application designed to facilitate introductory learning of **Bengali Sign Language (BdSL)** and **American Sign Language (ASL)**.
+**Ishara (ইশারা)** is a lightweight, offline-first educational application designed to facilitate introductory learning of **Bengali Sign Language (BdSL)**.
 
-Built with native Flutter, it features offline-cached typography, structured gesture descriptions, 7-language UI localization, and an ergonomic mobile design.
+Built with native Flutter, it features offline-cached typography, structured gesture descriptions, a fully Bangla UI, and an ergonomic mobile design.
 
 ---
 
 ## 🌟 Key Features
-- **Dual Curriculum Tracks:** Learn standardized Bengali Sign Language (BdSL) and international ASL side-by-side.
-- **7-Language Localization:** Instant switching between Bengali, English, Arabic (RTL), Hindi, Urdu (RTL), Spanish, and French.
+- **Bangla-first:** The whole interface is in Bangla.
 - **100% Offline-First:** Bundled offline fonts and local SQLite/SharedPreferences storage with zero cloud dependence.
 - **Interactive Mirror Mode:** Check hand positioning using on-device front camera alignment without uploading any video feed.
-- **Fast Searchable Dictionary:** Filter signs by daily essentials, emergency healthcare, numbers, and a few ASL letters with local bookmarking.
+- **Fast Searchable Dictionary:** Filter signs by daily essentials, emergency healthcare, and numbers with local bookmarking.
 
 ---
 

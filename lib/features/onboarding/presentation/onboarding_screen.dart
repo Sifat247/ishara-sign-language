@@ -30,38 +30,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        actions: [
-          // Language Switcher Dropdown
-          Container(
-            margin: const EdgeInsets.only(right: 16),
-            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-            decoration: BoxDecoration(
-              color: IsharaColors.primaryTeal.withValues(alpha: 0.08),
-              borderRadius: BorderRadius.circular(20),
-              border: Border.all(color: IsharaColors.primaryTeal.withValues(alpha: 0.2)),
-            ),
-            child: DropdownButtonHideUnderline(
-              child: DropdownButton<AppLanguage>(
-                value: localeNotifier.currentLanguage,
-                isDense: true,
-                items: AppLanguage.values.map((l) {
-                  return DropdownMenuItem(
-                    value: l,
-                    child: Text(
-                      l.displayName,
-                      style: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
-                    ),
-                  );
-                }).toList(),
-                onChanged: (val) {
-                  if (val != null) localeNotifier.setLanguage(val);
-                },
-              ),
-            ),
-          ),
-        ],
-      ),
       body: SafeArea(
         child: SingleChildScrollView(
           padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 16),

@@ -1,7 +1,6 @@
 import '../models/sign_item.dart';
 
 class AuthenticSignDatabase {
-  // Sourced and normalized according to Bangladesh National Federation of the Deaf (BNDF) & ASL Standards
   static const List<SignItem> initialSigns = [
     // --- 1. Daily Essentials (নৈমিত্তিক যোগাযোগ) ---
     SignItem(
@@ -145,38 +144,6 @@ class AuthenticSignDatabase {
       gestureHintBn: 'মাথার ওপর হাত রেখে সতর্কবার্তা বাতি ঘোরানোর ভঙ্গি করুন।',
       handEmoji: '🚑',
       track: 'both',
-    ),
-
-    // --- 4. ASL Alphabets (আমেরিকান বর্ণমালা) ---
-    SignItem(
-      id: 'asl_01',
-      banglaWord: 'Letter A',
-      englishWord: 'ASL - A',
-      category: 'alphabet',
-      descriptionBn: 'ASL বর্ণমালা A।',
-      gestureHintBn: 'মুঠো হাত সোজা রেখে বুড়ো আঙুলটি তর্জনীর পাশে সোজা রাখুন।',
-      handEmoji: '✊',
-      track: 'asl',
-    ),
-    SignItem(
-      id: 'asl_02',
-      banglaWord: 'Letter B',
-      englishWord: 'ASL - B',
-      category: 'alphabet',
-      descriptionBn: 'ASL বর্ণমালা B।',
-      gestureHintBn: '৪টি আঙুল সোজা উপরে একসাথে রাখুন, বুড়ো আঙুল তালুর উপর বাঁকান।',
-      handEmoji: '✋',
-      track: 'asl',
-    ),
-    SignItem(
-      id: 'asl_03',
-      banglaWord: 'Letter C',
-      englishWord: 'ASL - C',
-      category: 'alphabet',
-      descriptionBn: 'ASL বর্ণমালা C।',
-      gestureHintBn: 'হাতের আঙুলগুলো বাঁকিয়ে ইংরেজি "C" অক্ষরের আকৃতি দিন।',
-      handEmoji: '🤏',
-      track: 'asl',
     ),
 
     // --- 5. Family & Relations (পরিবার ও সম্পর্ক) ---

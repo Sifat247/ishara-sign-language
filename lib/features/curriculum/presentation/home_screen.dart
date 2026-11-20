@@ -47,7 +47,7 @@ class _HomeScreenState extends State<HomeScreen> {
       setState(() {
         _xpPoints = xp;
         _streakDays = streak;
-        _activeTrack = track;
+        _activeTrack = 'bdsl';
         _completedLessonIds = completed;
       });
     }
@@ -68,59 +68,6 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ],
         ),
-        actions: [
-          // UI Language Switcher Pill
-          Container(
-            margin: const EdgeInsets.only(right: 6),
-            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
-            decoration: BoxDecoration(
-              color: IsharaColors.primaryTeal.withValues(alpha: 0.08),
-              borderRadius: BorderRadius.circular(16),
-            ),
-            child: DropdownButtonHideUnderline(
-              child: DropdownButton<AppLanguage>(
-                value: localeNotifier.currentLanguage,
-                isDense: true,
-                items: AppLanguage.values.map((l) {
-                  return DropdownMenuItem(
-                    value: l,
-                    child: Text(l.displayName, style: const TextStyle(fontSize: 11, fontWeight: FontWeight.bold)),
-                  );
-                }).toList(),
-                onChanged: (val) {
-                  if (val != null) localeNotifier.setLanguage(val);
-                },
-              ),
-            ),
-          ),
-
-          // Sign Track Switcher Pill (BdSL vs ASL)
-          Container(
-            margin: const EdgeInsets.only(right: 8),
-            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
-            decoration: BoxDecoration(
-              color: IsharaColors.royalGold.withValues(alpha: 0.15),
-              borderRadius: BorderRadius.circular(16),
-              border: Border.all(color: IsharaColors.royalGold.withValues(alpha: 0.5)),
-            ),
-            child: DropdownButtonHideUnderline(
-              child: DropdownButton<String>(
-                value: _activeTrack,
-                isDense: true,
-                items: const [
-                  DropdownMenuItem(value: 'bdsl', child: Text('🇧🇩 BdSL', style: TextStyle(fontSize: 11, fontWeight: FontWeight.bold))),
-                  DropdownMenuItem(value: 'asl', child: Text('🇺🇸 ASL', style: TextStyle(fontSize: 11, fontWeight: FontWeight.bold))),
-                ],
-                onChanged: (val) async {
-                  if (val != null) {
-                    setState(() => _activeTrack = val);
-                    await ProgressTracker.setTrack(val);
-                  }
-                },
-              ),
-            ),
-          ),
-        ],
       ),
       body: CustomScrollView(
         slivers: [

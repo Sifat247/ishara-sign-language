@@ -5,7 +5,7 @@
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "Offline Bangla (BdSL) and ASL sign language beginner guide.",
+    "description": "Offline Bangla (BdSL) sign language beginner guide.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
