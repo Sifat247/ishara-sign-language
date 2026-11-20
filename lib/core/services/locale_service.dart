@@ -34,7 +34,6 @@ class AppStrings {
       'search_placeholder': 'বাংলা বা ইংরেজিতে ইশারা খুঁজুন...',
     },
 
-    // 2. English (en) - Global
   };
 
   static String tr(String key, String langCode) {
