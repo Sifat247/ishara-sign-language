@@ -93,7 +93,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     SizedBox(height: 10),
                     _BenefitRow(icon: Icons.camera_front_rounded, text: 'বাঁ-হাতি ও ডান-হাতি দৃশ্য বদলে দেখার সুবিধা'),
                     SizedBox(height: 10),
-                    _BenefitRow(icon: Icons.school_rounded, text: 'শিক্ষানবিশ সহায়িকা — প্রাথমিক বাংলা ও ইংরেজি সাইন ড্রিল'),
+                    _BenefitRow(icon: Icons.school_rounded, text: 'শিক্ষানবিশ সহায়িকা — প্রাথমিক বাংলা ইশারা ড্রিল'),
                   ],
                 ),
               ),

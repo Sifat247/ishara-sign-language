@@ -40,7 +40,6 @@ class _HomeScreenState extends State<HomeScreen> {
   Future<void> _loadState() async {
     final xp = await ProgressTracker.getXp();
     final streak = await ProgressTracker.getStreak();
-    final track = await ProgressTracker.getTrack();
     final completed = await LocalVaultService.getCompletedLessonIds();
 
     if (mounted) {

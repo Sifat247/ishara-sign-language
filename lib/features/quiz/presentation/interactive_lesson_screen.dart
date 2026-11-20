@@ -236,21 +236,6 @@ class _InteractiveLessonScreenState extends State<InteractiveLessonScreen> {
                     'ইশারা #${_currentIndex + 1} / ${widget.node.signs.length}',
                     style: const TextStyle(fontWeight: FontWeight.bold, color: IsharaColors.textMuted),
                   ),
-                  Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-                    decoration: BoxDecoration(
-                      color: IsharaColors.primaryTeal.withValues(alpha: 0.1),
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: Text(
-                      _currentSign.track.toUpperCase(),
-                      style: const TextStyle(
-                        fontSize: 12,
-                        fontWeight: FontWeight.bold,
-                        color: IsharaColors.primaryTeal,
-                      ),
-                    ),
-                  ),
                 ],
               ),
               const SizedBox(height: 12),

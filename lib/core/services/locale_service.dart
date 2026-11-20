@@ -14,7 +14,7 @@ class AppStrings {
     // 1. Bengali (বাংলা) - Primary Local
     'bn': {
       'app_title': 'ইশারা',
-      'app_subtitle': 'বাংলা ইশারা ভাষা (BdSL) শেখার প্রথম সম্পূর্ণ অফলাইন ও আধুনিক অ্যাপ।',
+      'app_subtitle': 'বাংলা ইশারা ভাষা (BdSL) শেখার সম্পূর্ণ অফলাইন ও আধুনিক অ্যাপ।',
       'start_free': 'শেখা শুরু করুন (Free)',
       'streak_label': 'ধারাবাহিক স্ট্রিক',
       'xp_label': 'মোট অভিজ্ঞতা',
